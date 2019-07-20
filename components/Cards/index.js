@@ -64,7 +64,7 @@ function createArticle (articleObj){
 
     // * Setup attributes
     cardAuthorImg.src = articleObj.authorPhoto
-    cardAuthorNamealt = `Image of Author.`
+    cardAuthorName.alt = `Image of Author.`
 
     // * Setup text content 
     cardHeadline.textContent = articleObj.headline
