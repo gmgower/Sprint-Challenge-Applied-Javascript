@@ -40,5 +40,18 @@ function createArticle (){
     cardImgContainer.appendChild(cardAuthorImg)
 
     // * Setup classes
+    card.classList.add('card')
+    cardHeadline.classList.add('headline')
+    cardAuthorContainer.classList.add('author')
+    cardImgContainer.classList.add('img-container')
+
+    // * Setup attributes
+    cardAuthorImg.scr = `url of authors image`
+    cardAuthorNamealt = `Image of Author.`
+
+    // * Setup text content 
+    cardHeadline.textContent = `Headline of article`
+    cardAuthorName.textContent = `By: authors name`
+    
     return card
 }
