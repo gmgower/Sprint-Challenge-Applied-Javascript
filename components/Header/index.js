@@ -10,7 +10,8 @@
 // And add it to the DOM in the .headerContainer component
 
     // * Check DOM
-
+    const headers = document.querySelector('.header-container')
+    headers.appendChild(Header())
 
 function Header() {
     // * Define elements
@@ -23,8 +24,6 @@ function Header() {
     header.appendChild(headerDate)
     header.appendChild(headerTitle)
     header.appendChild(headerTemp)
-
-
 
     // * setup class name
 
