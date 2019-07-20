@@ -7,3 +7,22 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+// * Check Dom
+const tabEntry = document.querySelector('.topics')
+
+tabEntry.appendChild(createTab())
+
+
+function createTab (){
+    // * Define elements
+    const tabs = document.createElement('div')
+
+    // * Setup classes
+    tabs.classList.add('tab')
+
+    // * Setup text content
+    tabs.textContent = `topic here`
+
+    return tabs
+}
