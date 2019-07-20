@@ -39,5 +39,6 @@ function createArticle (){
     cardAuthorContainer.appendChild(cardAuthorName)
     cardImgContainer.appendChild(cardAuthorImg)
 
+    // * Setup classes
     return card
 }
