@@ -18,9 +18,26 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
+// * Setup axios promise to GET request to address. 
+const articlesEntry = document.querySelector('.cards-container')
+
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+    .then(ltArticleData => {
+        console.log(`Lambda Times Article Data`, ltArticleData.data.articles)
+        for(let [type, articles] of Object.entries(ltArticleData.data.articles)){
+            // console.log(type,articles)
+            articles.forEach(article => {
+                articlesEntry.appendChild(createArticle(article))
+            })
+        }
+    })
+    .catch(error => {
+        console.log(`Lambda Time Articles not available.`, error)
+    })
+
 // * Check DOM
-const cards = document.querySelector('.cards-container')
-cards.appendChild(createArticle())
+// const cards = document.querySelector('.cards-container')
+// cards.appendChild(createArticle())
 
 
 function createArticle (){
@@ -52,6 +69,6 @@ function createArticle (){
     // * Setup text content 
     cardHeadline.textContent = `Headline of article`
     cardAuthorName.textContent = `By: authors name`
-    
+
     return card
 }
