@@ -18,12 +18,11 @@
   </div>
 */
 // * Setup DOM
-carousel = document.querySelector('.carousel-container')
+const carousels = document.querySelector('.carousel-container')
+carousels.appendChild(createCarousel())
 
-carousel.appendChild(createCarousel())
 
-
-function createCarousel () {
+function createCarousel() {
   // * Define elements
   const carousel = document.createElement('div')
   const leftButton = document.createComment('div')
@@ -35,9 +34,26 @@ function createCarousel () {
 
   // * Setup structure
 carousel.appendChild(leftButton)
-carousel.appendChild(leftButton)
+carousel.appendChild(imgOne)
+carousel.appendChild(imgTwo)
+carousel.appendChild(imgThree)
+carousel.appendChild(imgFour)
+carousel.appendChild(rightButton)
 
+// * Setup classes
+carousel.classList.add('carousel')
+leftButton.classList.add('left-button')
+rightButton.classList.add('right-button')
 
+// * Setup text content
+leftButton.textContent = '<'
+rightButton.textContent = '>'
+
+// * Setup attrbuites
+imgOne.src = '/assets/carousel/computer.jpeg'
+imgTwo.src = '/assets/carousel/mountains.jpeg'
+imgThree.src = '/assets/carousel/trees.jpeg'
+imgFour.src = '/assets/carousel/turntable.jpeg'
 
 
 return carousel
