@@ -40,7 +40,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 // cards.appendChild(createArticle())
 
 
-function createArticle (){
+function createArticle (articleObj){
     // * Define elements
     const card = document.createElement('div')
     const cardHeadline = document.createElement('div')
@@ -63,12 +63,12 @@ function createArticle (){
     cardImgContainer.classList.add('img-container')
 
     // * Setup attributes
-    cardAuthorImg.scr = `url of authors image`
+    cardAuthorImg.src = articleObj.authorPhoto
     cardAuthorNamealt = `Image of Author.`
 
     // * Setup text content 
-    cardHeadline.textContent = `Headline of article`
-    cardAuthorName.textContent = `By: authors name`
+    cardHeadline.textContent = articleObj.headline
+    cardAuthorName.textContent = `By: ${articleObj.authorName}`
 
     return card
 }
