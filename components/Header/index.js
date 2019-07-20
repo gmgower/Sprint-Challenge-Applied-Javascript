@@ -20,6 +20,9 @@ function Header() {
     const headerTemp = document.createElement('span')
 
     // * Setup structure
+    header.appendChild(headerDate)
+    header.appendChild(headerTitle)
+    header.appendChild(headerTemp)
 
 
 
