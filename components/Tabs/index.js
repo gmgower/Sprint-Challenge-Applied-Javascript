@@ -8,13 +8,28 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
+// * Setup axios promise to GET request to address. 
+const topicsEntry = document.querySelector('.topics')
+
+axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
+    .then(ltData => {
+        console.log(`Lambda Times Data`, ltData.data.topics)
+        ltData.data.topics.forEach(topic => {
+            topicsEntry.appendChild(createTab(topic))
+        })
+    })
+    .catch(error => {
+        console.log(`Lambda Times not avaliable`, error)
+    })
+
+
+
 // * Check Dom
-const tabEntry = document.querySelector('.topics')
+// const tabEntry = document.querySelector('.topics')
+// tabEntry.appendChild(createTab())
 
-tabEntry.appendChild(createTab())
 
-
-function createTab (){
+function createTab (topicObj){
     // * Define elements
     const tabs = document.createElement('div')
 
@@ -22,7 +37,7 @@ function createTab (){
     tabs.classList.add('tab')
 
     // * Setup text content
-    tabs.textContent = `topic here`
+    tabs.textContent = topicObj
 
     return tabs
 }
