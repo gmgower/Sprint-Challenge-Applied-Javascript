@@ -26,12 +26,14 @@ function Header() {
     header.appendChild(headerTemp)
 
     // * setup class name
-
-
-    // * setup attributes
-
+    header.classList.add('header')
+    headerDate.classList.add('date')
+    headerTemp.classList.add('temp')
 
     // * setup text content
+    headerDate.textContent = `MARCH 28, 2019`
+    headerTitle.textContent = `Lambda Times`
+    headerTemp.textContent = `98°`
 
     return header
 
