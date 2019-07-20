@@ -58,3 +58,13 @@ imgFour.src = '/assets/carousel/turntable.jpeg'
 
 return carousel
 }
+
+
+class Carousel {
+  constructor(carouselElement){
+    this.carouselElement = carouselElement
+  }
+}
+
+
+new Carousel(carousel)
