@@ -17,3 +17,27 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+// * Check DOM
+const cards = document.querySelector('.cards-container')
+cards.appendChild(createArticle())
+
+
+function createArticle (){
+    // * Define elements
+    const card = document.createElement('div')
+    const cardHeadline = document.createElement('div')
+    const cardAuthorContainer = document.createElement('div')
+    const cardImgContainer = document.createElement('div')
+    const cardAuthorImg = document.createElement('img')
+    const cardAuthorName = document.createElement('span')
+
+    // * Setup structure
+    card.appendChild(cardHeadline)
+    card.appendChild(cardAuthorContainer)
+    cardAuthorContainer.appendChild(cardImgContainer)
+    cardAuthorContainer.appendChild(cardAuthorName)
+    cardImgContainer.appendChild(cardAuthorImg)
+
+    return card
+}
