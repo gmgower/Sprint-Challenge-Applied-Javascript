@@ -17,3 +17,54 @@
     <div class="right-button"> > </div>
   </div>
 */
+// * Setup DOM
+const carousels = document.querySelector('.carousel-container')
+carousels.appendChild(createCarousel())
+
+
+function createCarousel() {
+  // * Define elements
+  const carousel = document.createElement('div')
+  const leftButton = document.createComment('div')
+  const imgOne = document.createElement('img')
+  const imgTwo = document.createElement('img')
+  const imgThree = document.createElement('img')
+  const imgFour = document.createElement('img')
+  const rightButton = document.createElement('div')
+
+  // * Setup structure
+carousel.appendChild(leftButton)
+carousel.appendChild(imgOne)
+carousel.appendChild(imgTwo)
+carousel.appendChild(imgThree)
+carousel.appendChild(imgFour)
+carousel.appendChild(rightButton)
+
+// * Setup classes
+carousel.classList.add('carousel')
+leftButton.classList.add('left-button')
+rightButton.classList.add('right-button')
+
+// * Setup text content
+leftButton.textContent = '<'
+rightButton.textContent = '>'
+
+// * Setup attrbuites
+imgOne.src = '/assets/carousel/computer.jpeg'
+imgTwo.src = '/assets/carousel/mountains.jpeg'
+imgThree.src = '/assets/carousel/trees.jpeg'
+imgFour.src = '/assets/carousel/turntable.jpeg'
+
+
+return carousel
+}
+
+
+class Carousel {
+  constructor(carouselElement){
+    this.carouselElement = carouselElement
+  }
+}
+
+
+new Carousel(carousel)
